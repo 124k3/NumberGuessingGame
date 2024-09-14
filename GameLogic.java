@@ -25,11 +25,13 @@ public class GameLogic
      * {@code lowerLimit >= randomNumber <upperLimit}
      *
      */
-    public int getRandomNumber(Random random, int lowerLimit, int upperLimit)
+    public int getRandomNumber(
+            Random random, int lowerLimit, int upperLimit)
     {
         return random.nextInt(lowerLimit, upperLimit);
 
     }
+
     
     /**
      * only return(s) a valid integet input
@@ -55,12 +57,14 @@ public class GameLogic
             System.out.printf(prompt);
             try
             {
-                validInput = scanner.nextInt();
+                validIntInput = scanner.nextInt();
                 invalidInput = false;
             }
             catch (Exception e)
             {
-                System.out.err(errMessage);
+                System.out.println(errMessage);
+                // consumens the invalid input (the string with spaces)
+                scanner.nextLine();
             }
         }
         return validIntInput;
