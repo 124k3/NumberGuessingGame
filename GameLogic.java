@@ -38,12 +38,16 @@ public class GameLogic
      * 
      * If the input obtained isn't valid it will again prompt the same
      * untill and unless the suitable (valid) input is obtained.
-     * @param scanner the scanner object of the class {@code java.util.Scanner}
-     * @param prompt the prompt(message) to be shown while asking for the input.
-     * the prompt supports {@code C} style text formatting {@code %d, %n, %f..}
+     * @param scanner the scanner object of the class 
+     * {@code java.util.Scanner}
+     * @param prompt the prompt(message) to be shown 
+     * while asking for the input. The prompt supports {@code C} style text
+     * formatting {@code %d, %n, %f..}
      * @param errMessage the message to be shown if the input 
-     * obtained is of invalid type.
+     * obtained is of invalid type. The errMessage supports {@code C} style 
+     * textformatting {@code %d, %n, %f..}
      * @return returns a valid integer (gauranteed).
+     *
      */
     public int getValidIntInput(
             Scanner scanner, String prompt, String errMessage)
@@ -68,6 +72,63 @@ public class GameLogic
             }
         }
         return validIntInput;
+    }
+
+
+    /***/
+    public int gameDifficultyLevel(int difficultyLevel)
+    {
+        int chances = 0; 
+
+        switch (difficultyLevel)
+        {
+            case 1:
+                // easy level difficulty
+                chances +=10;
+                break;
+            case 2:
+                // medium level difficulty
+                chances +=5;
+                break;
+            case 3:
+                chances +=3;
+                break;
+        }
+        return chances;
+    }
+
+
+    /***/
+    public String incorrectMessage(int guessedNumber, int attempts)
+    {
+        String message;
+        if (guessedNumber == actualNumber)
+        {
+            message = String.format(
+            "Congratulations! you guessed the correct Number in %d attempts",
+            attempts);
+        }
+        else
+        {
+            if (guessedNumber < actualNumber)
+            {
+                message = String.format(
+"Incorrect! The number is Grater than %d (remaining Attempt's: %d)",
+                    guessedNumber,
+                    attempts);
+            }
+
+            if (guessedNumber > actualNumber)
+            {
+                message = String.format(
+"Incorrect! The number is Smaller than %d (remaining Attempt's: %d)",
+                    guessedNumber,
+                    attempts);
+            }
+
+        }
+        
+        return message; 
     }
 
 }
