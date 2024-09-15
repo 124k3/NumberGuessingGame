@@ -20,8 +20,12 @@ public class Game {
         this.targetRandomNumber = targetRandomNumber;
     }
 
-    public int getChances() {
+    public static int getChances() {
         return chances;
+    }
+
+    public static void setChance(int chances) {
+        Game.chances = chances;
     }
 
     public int getTargetRandomNumber() {
@@ -50,11 +54,19 @@ public class Game {
             gameLogic.getChances(difficultyLevel),
             gameLogic.getRandomNumber(random, 0, 100)
         );
-        while (chances != 0) {
+
+        while (game.getChances() != 0 && !gameLogic.getStopGame()) {
             int inputGuess = gameLogic.getValidIntInput(
                 scanner,
                 "Enter your guess: ",
                 "Bruh! only use number's"
+            );
+            System.out.println(
+                gameLogic.guessMessage(
+                    inputGuess,
+                    game.targetRandomNumber,
+                    chances
+                )
             );
         }
     }
