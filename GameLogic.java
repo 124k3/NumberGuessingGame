@@ -10,7 +10,19 @@ import java.util.Scanner;
  */
 public class GameLogic {
 
+    private static boolean stopGame = false;
+
     public GameLogic() {}
+
+    // getter(s)
+    public boolean getStopGame() {
+        return stopGame;
+    }
+
+    // setter(s)
+    public void setStopGame(boolean stopGame) {
+        this.stopGame = stopGame;
+    }
 
     /**
      * provides a random integer within the specified limit.
@@ -112,32 +124,33 @@ public class GameLogic {
     public String guessMessage(
         int guessedNumber,
         int actualNumber,
-        int attempts
+        int remainingAttempts
     ) {
         String message = null;
 
         if (guessedNumber == actualNumber) {
-            attempts -= 1;
+            Game.setChance(Game.getChances() - 1);
             message = String.format(
                 "Congratulations! you guessed the correct Number in %d attempts",
-                attempts
+                remainingAttempts - 1
             );
+            stopGame = true;
         } else {
             if (guessedNumber < actualNumber) {
-                attempts -= 1; // decrement as one attempt is being used
+                Game.setChance(Game.getChances() - 1);
                 message = String.format(
                     "Incorrect! The number is Grater than %d (remaining Attempt's: %d)",
                     guessedNumber,
-                    attempts
+                    remainingAttempts - 1
                 );
             }
 
             if (guessedNumber > actualNumber) {
-                attempts -= 1;
+                Game.setChance(Game.getChances() - 1);
                 message = String.format(
                     "Incorrect! The number is Smaller than %d (remaining Attempt's: %d)",
                     guessedNumber,
-                    attempts
+                    remainingAttempts - 1
                 );
             }
         }
