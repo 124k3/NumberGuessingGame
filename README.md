@@ -1,4 +1,6 @@
 # NumberGuessingGame
+[project Inspiration](https://roadmap.sh/projects/number-guessing-game)
+
 
 A simple number guessing game, initially build to just mess around and find out
 but eventually one thing lead to another and long story short here we are.
