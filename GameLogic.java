@@ -111,9 +111,14 @@ public class GameLogic
 
 
     /**
+     * As the player made a guess i.e provides an input a success or filure 
+     * message will be shown. 
      *
-     *
-     *
+     * @param guessedNumber the number guessed: the input number by the user.
+     * @param actualNumber the target i.e the number to be guessed.
+     * @param attempts a static variable taking note of how many attempts 
+     * have/has been used.
+     * @return {@code message} the success or failure message. 
      */
     public String guessMessage(
             int guessedNumber, int actualNumber, int attempts)
