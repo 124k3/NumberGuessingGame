@@ -75,7 +75,18 @@ public class GameLogic
     }
 
 
-    /***/
+    /**
+     * according to the choice returns the chances of playing the game
+     *
+     * The method in accordance to the input assign(s) difficulty level
+     * which is just how many chances the user is alllowed to play one game
+     * before the game terminates.
+     *
+     * @param difficultyLevel the values can be {@code 1 or 2 or 3} 
+     * 1 being the easy and 3 beight the hard
+     * @return {@code chances} the number of chances (times) a player is 
+     * allowed to guess.
+     */
     public int gameDifficultyLevel(int difficultyLevel)
     {
         int chances = 0; 
@@ -91,6 +102,7 @@ public class GameLogic
                 chances +=5;
                 break;
             case 3:
+                // hard level difficulty
                 chances +=3;
                 break;
         }
@@ -98,12 +110,20 @@ public class GameLogic
     }
 
 
-    /***/
-    public String incorrectMessage(int guessedNumber, int attempts)
+    /**
+     *
+     *
+     *
+     */
+    public String guessMessage(
+            int guessedNumber, int actualNumber, int attempts)
     {
-        String message;
+        String message = null;
+       
         if (guessedNumber == actualNumber)
         {
+
+            attempts -= 1;
             message = String.format(
             "Congratulations! you guessed the correct Number in %d attempts",
             attempts);
@@ -112,6 +132,7 @@ public class GameLogic
         {
             if (guessedNumber < actualNumber)
             {
+                attempts -= 1; // decrement as one attempt is being used
                 message = String.format(
 "Incorrect! The number is Grater than %d (remaining Attempt's: %d)",
                     guessedNumber,
@@ -120,6 +141,7 @@ public class GameLogic
 
             if (guessedNumber > actualNumber)
             {
+                attempts -= 1;
                 message = String.format(
 "Incorrect! The number is Smaller than %d (remaining Attempt's: %d)",
                     guessedNumber,
@@ -127,8 +149,8 @@ public class GameLogic
             }
 
         }
-        
         return message; 
     }
+
 
 }
