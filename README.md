@@ -6,6 +6,9 @@ but eventually one thing lead to another and long story short here we are.
 
 ## contents
 - [Installation and Execution](#installation-and-execution)
+> - [Windows](#windows)
+> - [Linux](#linux-(debian))
+> - [MacOS](#macos)
 
 
 ## Installation and Execution
