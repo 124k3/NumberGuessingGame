@@ -28,7 +28,7 @@ cd C:\path\to\the\JAR_file
 ```sh
 java -jar jarFileName.jar
 ```
-- ### Linux (Debian)
+## `Linux (Debian)`
 1. Ensure Java is Installed.
 - open terminal and type `java --version`.
 If java isn't installed you can install it from
@@ -52,8 +52,8 @@ cd /path/to/the/JAR_file
 > replace the `jarFileName.jar` with the actual JAR file name.
 ```sh
 java -jar jarFileName.jar
-
-- ### MacOS
+```
+## `MacOS`
 
 1. Ensure Java is Installed.
 - open terminal and type `java --version`.
@@ -75,7 +75,7 @@ cd /path/to/the/JAR_file
 > replace the `jarFileName.jar` with the actual JAR file name.
 ```sh
 java -jar jarFileName.jar
-``````
+```
 
 
 
