@@ -1,4 +1,11 @@
+
+
+package io.github.i24k3;
+import java.util.Scanner;
+import java.util.Random;
+
 /**
+ *
  * Main class of the game.
  * This class `Game` handles are the opeations necessary for the successfull
  * exectution of the game.
@@ -6,10 +13,6 @@
  * @version 1.0
  *
  */
-
-import java.util.Random;
-import java.util.Scanner;
-
 public class Game {
 
     private static int chances;

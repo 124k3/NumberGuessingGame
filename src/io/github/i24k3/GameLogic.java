@@ -1,3 +1,5 @@
+package io.github.i24k3;
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -117,7 +119,7 @@ public class GameLogic {
      *
      * @param guessedNumber the number guessed: the input number by the user.
      * @param actualNumber the target i.e the number to be guessed.
-     * @param attempts a static variable taking note of how many attempts
+     * @param remainingAttempts static variable taking note of how many attempts
      * have/has been used.
      * @return {@code message} the success or failure message.
      */

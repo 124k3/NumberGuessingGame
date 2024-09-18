@@ -1,3 +1,11 @@
+package io.github.i24k3;
+
+
+
+/**
+ * All the game ui is creted and handled by this class.
+ * The UI inclueds the welcome text, the messages etc.
+ */
 public class GameUI {
 
     private String welcomeMessage = "Welcome to the Number Guessing Game!";

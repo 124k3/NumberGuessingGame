@@ -1,3 +1,4 @@
+package io.github.i24k3;
 public class AsciiArt {
 
     private String asciiArt =
